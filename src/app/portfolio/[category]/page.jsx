@@ -15,6 +15,14 @@ const getData = (cat) => {
   return data;
 };
 
+/* export async function generateMetadata({ params }) {
+  const meta = await getData(params.category);
+
+  return {
+    title: meta.title,
+  };
+} */
+
 const Category = ({ params }) => {
   const data = getData(params.category);
   return (
@@ -29,7 +37,12 @@ const Category = ({ params }) => {
               <Button text="See more" url="#" />
             </div>
             <div className={styles.imgContainer}>
-              <Image className={styles.img} src={item.image} fill={true} />
+              <Image
+                alt=""
+                className={styles.img}
+                src={item.image}
+                fill={true}
+              />
             </div>
           </div>
         </>
